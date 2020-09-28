@@ -1,24 +1,13 @@
-Version 4.3.4 - 1 May 2020
+bootstrap4-dialog
+================
 
-Bootstrap-Dialog for Bootstrap 4.3.1
+[![Latest release](https://img.shields.io/github/release/GedMarc/bootstrap4-dialog.svg)](https://github.com/GedMarc/bootstrap4-dialog/releases/latest)
 
 ## Fully compatible with Bootstrap 4.3.1
 ## Includes size-extrawide full width display
 ## Includes all colour themes from Bootstrap 4
 
-
-bootstrap-dialog
-================
-
-[![Latest release](https://img.shields.io/github/release/nakupanda/bootstrap3-dialog.svg)](https://github.com/nakupanda/bootstrap3-dialog/releases/latest)
-
 Make use of Bootstrap Modal more monkey-friendly.
-
-See live examples here: <a href="http://nakupanda.github.io/bootstrap3-dialog/">http://nakupanda.github.io/bootstrap3-dialog/</a>
-
-Please note that this project is for <a href="http://getbootstrap.com/"><strong>Bootstrap 3</strong></a>.
-
-Thanks for [akinoniku](https://github.com/akinoniku)'s suggestions on dialog appearance.
 
 ================
 
@@ -26,7 +15,7 @@ Thanks for [akinoniku](https://github.com/akinoniku)'s suggestions on dialog app
 
 It's recommended to provide online examples when asking questions or reporting bugs.
 Fork this all-ready jsfiddle and start writing your example:
-<a href="https://jsfiddle.net/o5k0eaws/1/">http://jsfiddle.net/o5k0eaws/1/</a>
+<a href="http://jsfiddle.net/qu6r3shn/">http://jsfiddle.net/qu6r3shn/</a>
 
 ================
 
