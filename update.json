@@ -4,5 +4,6 @@
   "repo": "GedMarc/bootstrap4-dialog",
   "files": {
     "include": ["dist/css/bootstrap-dialog.css", "dist/js/bootstrap-dialog.js", "dist/css/bootstrap-dialog.min.css", "dist/js/bootstrap-dialog.min.js"]
-  }
+  },
+  "branch": "bootstrap4-dev"
 }
