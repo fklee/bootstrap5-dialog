@@ -548,14 +548,14 @@
         updateType: function () {
             if (this.isRealized()) {
                 var types = [BootstrapDialog.TYPE_DEFAULT,
-                    BootstrapDialog.TYPE_INFO,
-                    BootstrapDialog.TYPE_PRIMARY,
-                    BootstrapDialog.TYPE_SECONDARY,
-                    BootstrapDialog.TYPE_SUCCESS,
-                    BootstrapDialog.TYPE_WARNING,
-                    BootstrapDialog.TYPE_DARK,
-                    BootstrapDialog.TYPE_LIGHT,
-                    BootstrapDialog.TYPE_DANGER];
+                BootstrapDialog.TYPE_INFO,
+                BootstrapDialog.TYPE_PRIMARY,
+                BootstrapDialog.TYPE_SECONDARY,
+                BootstrapDialog.TYPE_SUCCESS,
+                BootstrapDialog.TYPE_WARNING,
+                BootstrapDialog.TYPE_DARK,
+                BootstrapDialog.TYPE_LIGHT,
+                BootstrapDialog.TYPE_DANGER];
 
                 this.getModal().removeClass(types.join(' ')).addClass(this.getType());
             }
@@ -1191,7 +1191,7 @@
             this.getModalBody().append(this.createBodyContent());
             this.getModal().data('bs.modal', new BootstrapDialogModal(this.getModalForBootstrapDialogModal(), { //FIXME for BootstrapV4
                 backdrop: (this.isClosable() && this.canCloseByBackdrop()) ? true : 'static',
-                keyboard: false,
+                keyboard: this.options.closeByKeyboard,
                 show: false
             }));
             this.makeModalDraggable();

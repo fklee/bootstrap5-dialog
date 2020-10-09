@@ -1,6 +1,6 @@
 {
-  "name": "bootstrap4-dialog",
-  "version": "4.3.6",
+  "name": "bootstrap5-dialog",
+  "version": "5.0.0",
   "description": "Make use of Bootstrap Modal more monkey-friendly.",
   "directories": {
     "example": "examples"
@@ -11,20 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GedMarc/bootstrap4-dialog"
+    "url": "https://github.com/fklee/bootstrap5-dialog"
   },
   "keywords": [
     "bootstrap",
     "dialog"
   ],
-  "author": "eugenemayer/nakupanda/gedmarc",
+  "author": "eugenemayer/nakupanda/gedmarc/fklee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GedMarc/bootstrap4-dialog/issues"
+    "url": "https://github.com/fklee/bootstrap5-dialog/issues"
   },
-  "homepage": "https://github.com/GedMarc/bootstrap4-dialog",
+  "homepage": "https://github.com/fklee/bootstrap5-dialog",
   "devDependencies": {
-    "bootstrap": ">=4.3.1",
+    "bootstrap": ">=5.0.0-alpha.0",
     "eslint": ">=0.6.2",
     "gulp": ">=3.8.1",
     "gulp-clean": ">=0.3.0",
@@ -36,6 +36,7 @@
     "gulp-rename": ">=1.2.0",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": ">=0.3.0",
+    "gulp-sass": "^4.1.0",
     "vinyl-source-stream": "^0.1.1"
   }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "cross-solution/bootstrap3-dialog",
+    "name": "fklee/bootstrap5-dialog",
     "description": "Make use of Bootstrap Modal more monkey-friendly.",
     "license": "MIT",
     "authors": [
@@ -10,6 +10,6 @@
     ],
     "require": {
 	"components/jquery": "*",
-	"twbs/bootstrap": "3.*"
+	"twbs/bootstrap": "5.*@alpha"
     }
 }
