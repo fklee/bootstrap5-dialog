@@ -42,6 +42,8 @@
     var BootstrapDialogModal = function (element, options) {
         if (/4\.1\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
             return new Modal(element, options);
+        } else if (/5\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
+            return new Modal(element, options);
         } else {
             Modal.call(this, element, options);
         }
@@ -55,6 +57,8 @@
         } else if (/3\.3\.[1,2]/.test($.fn.modal.Constructor.VERSION)) {
             version = 'v3.3';  // v3.3.1, v3.3.2
         } else if (/4\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
+            version = 'v4.1';
+        } else if (/5\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV5
             version = 'v4.1';
         } else {
             version = 'v3.3.4';
@@ -199,15 +203,15 @@
      *  Some constants.
      */
     BootstrapDialog.NAMESPACE = 'bootstrap-dialog';
-    BootstrapDialog.TYPE_DEFAULT = 'type-default';
-    BootstrapDialog.TYPE_INFO = 'type-info';
-    BootstrapDialog.TYPE_PRIMARY = 'type-primary';
-    BootstrapDialog.TYPE_SECONDARY = 'type-secondary';
-    BootstrapDialog.TYPE_SUCCESS = 'type-success';
-    BootstrapDialog.TYPE_WARNING = 'type-warning';
-    BootstrapDialog.TYPE_DANGER = 'type-danger';
-    BootstrapDialog.TYPE_DARK = 'type-dark';
-    BootstrapDialog.TYPE_LIGHT = 'type-light';
+    BootstrapDialog.TYPE_DEFAULT = 'bg-info';
+    BootstrapDialog.TYPE_INFO = 'bg-info';
+    BootstrapDialog.TYPE_PRIMARY = 'bg-primary';
+    BootstrapDialog.TYPE_SECONDARY = 'bg-secondary';
+    BootstrapDialog.TYPE_SUCCESS = 'bg-success';
+    BootstrapDialog.TYPE_WARNING = 'bg-warning';
+    BootstrapDialog.TYPE_DANGER = 'bg-danger';
+    BootstrapDialog.TYPE_DARK = 'bg-dark';
+    BootstrapDialog.TYPE_LIGHT = 'bg-light';
     BootstrapDialog.DEFAULT_TEXTS = {};
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_DEFAULT] = 'Default';
     BootstrapDialog.DEFAULT_TEXTS[BootstrapDialog.TYPE_INFO] = 'Information';
@@ -221,11 +225,11 @@
     BootstrapDialog.DEFAULT_TEXTS['OK'] = 'OK';
     BootstrapDialog.DEFAULT_TEXTS['CANCEL'] = 'Cancel';
     BootstrapDialog.DEFAULT_TEXTS['CONFIRM'] = 'Confirmation';
-    BootstrapDialog.SIZE_NORMAL = 'size-normal';
-    BootstrapDialog.SIZE_SMALL = 'size-small';
-    BootstrapDialog.SIZE_WIDE = 'size-wide';    // size-wide is equal to modal-lg
-    BootstrapDialog.SIZE_EXTRAWIDE = 'size-extrawide';    // size-wide is equal to modal-lg
-    BootstrapDialog.SIZE_LARGE = 'size-large';
+    BootstrapDialog.SIZE_NORMAL = '';
+    BootstrapDialog.SIZE_SMALL = 'modal-sm';
+    BootstrapDialog.SIZE_WIDE = 'modal-lg';    // size-wide is equal to modal-lg
+    BootstrapDialog.SIZE_EXTRAWIDE = 'modal-lg';    // size-wide is equal to modal-lg
+    BootstrapDialog.SIZE_LARGE = 'modal-xl';
     BootstrapDialog.BUTTON_SIZES = {};
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_NORMAL] = '';
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_SMALL] = 'btn-small';
@@ -557,7 +561,7 @@
                 BootstrapDialog.TYPE_LIGHT,
                 BootstrapDialog.TYPE_DANGER];
 
-                this.getModal().removeClass(types.join(' ')).addClass(this.getType());
+                this.getModalHeader().removeClass(types.join(' ')).addClass(this.getType());
             }
 
             return this;
@@ -581,8 +585,9 @@
                     .removeClass(BootstrapDialog.SIZE_WIDE)
                     .removeClass(BootstrapDialog.SIZE_EXTRAWIDE)
                     .removeClass(BootstrapDialog.SIZE_LARGE);
-                this.getModal().addClass(this.getSize());
+                this.getModalDialog().addClass(this.getSize());
 
+                /*
                 // Smaller dialog.
                 this.getModalDialog().removeClass('modal-sm');
                 if (this.getSize() === BootstrapDialog.SIZE_SMALL) {
@@ -599,7 +604,7 @@
                 if (this.getSize() === BootstrapDialog.SIZE_EXTRAWIDE) {
                     this.getModalDialog().addClass('modal-xl');
                 }
-
+                */
                 // Button size
                 $.each(this.options.buttons, function (index, button) {
                     var $button = dialog.getButton(button.id);
@@ -803,34 +808,38 @@
             return BootstrapDialog.NAMESPACE + '-' + name;
         },
         createHeaderContent: function () {
-            var $container = $('<div></div>');
-            $container.addClass(this.getNamespace('header'));
+            //var $container = $('<div></div>');
+            //$container.addClass(this.getNamespace('header'));
 
             // title
-            $container.append(this.createTitleContent());
+            //$container.append(this.createTitleContent());
 
             // Close button
-            $container.append(this.createCloseButton());
+            //$container.append(this.createCloseButton());
 
             return $container;
         },
         createTitleContent: function () {
-            var $title = $('<div></div>');
+            var $title = $('<h5></h5>');
+            $title.addClass('modal-title');
             $title.addClass(this.getNamespace('title'));
 
             return $title;
         },
         createCloseButton: function () {
-            var $container = $('<div></div>');
-            $container.addClass(this.getNamespace('close-button'));
-            var $icon = $('<button class="close" aria-label="close"></button>');
+            //var $container = $('<div></div>');
+            //$container.addClass(this.getNamespace('close-button'));
+            var $button = $('<button type="button" class="btn-close" data-dismiss="modal" aria-label="close"></button>');
+            $button.addClass(this.getNamespace('close-button'));
+            /*
             $icon.append(this.options.closeIcon);
-            $container.append($icon);
-            $container.on('click', { dialog: this }, function (event) {
+             */
+            //$icon.append($icon);
+            $button.on('click', { dialog: this }, function (event) {
                 event.data.dialog.close();
             });
 
-            return $container;
+            return $button;
         },
         createBodyContent: function () {
             var $container = $('<div></div>');
@@ -1187,7 +1196,9 @@
                 this.getModal().attr('aria-describedby', this.getDescription());
             }
             //this.getModalFooter().append(this.createFooterContent());
-            this.getModalHeader().append(this.createHeaderContent());
+            this.getModalHeader().append(this.createTitleContent());
+            this.getModalHeader().append(this.createCloseButton());
+            //this.getModalHeader().append(this.createHeaderContent()); //V4 template
             this.getModalBody().append(this.createBodyContent());
             this.getModal().data('bs.modal', new BootstrapDialogModal(this.getModalForBootstrapDialogModal(), { //FIXME for BootstrapV4
                 backdrop: (this.isClosable() && this.canCloseByBackdrop()) ? true : 'static',

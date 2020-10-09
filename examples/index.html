@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="libs/bootstrap.min.css?v=4.13" rel="stylesheet" type="text/css">
-
-  <link href="../dist/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css">
-
-  <script src="libs/jquery.min.js?v=3.31" type="text/javascript"></script>
-  <script src="libs/popper.min.js?v=4.13" type="text/javascript"></script>
-  <script src="libs/bootstrap.min.js?v=4.13" type="text/javascript"></script>
-
-  <script src="../dist/js/bootstrap-dialog.min.js" type="text/javascript"></script>
+  <link href="libs/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="libs/bootstrap-dialog.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8" />
 <title>BootstrapDialog examples</title>
@@ -160,7 +153,7 @@
                     alert('Hi Orange!');
                 }
             }, {
-                icon: 'glyphicon glyphicon-ban-circle',
+                icon: 'icon icon-example',
                 label: 'Button 3',
                 cssClass: 'btn-warning'
             }, {
@@ -424,7 +417,7 @@
         $.each(types, function(index, type) {
             buttons.push({
                 label: type,
-                cssClass: 'btn-default btn-sm',
+                cssClass: 'btn btn-primary btn-sm',
                 action: function(dialog) {
                     dialog.setType(type);
                 }
@@ -1189,6 +1182,11 @@ BootstrapDialog.show({
     <hr />
     <footer class="text-center"><a href="https://github.com/nakupanda/bootstrap3-dialog">Go to the project.</a> | <a href="mailto:javanoob@hotmail.com">Contact me</a> if you can help to improve this example page.</footer>
 </div>
+
+<script src="libs/jquery.min.js" type="text/javascript"></script>
+<script src="libs/popper.min.js" type="text/javascript"></script>
+<script src="libs/bootstrap.min.js" type="text/javascript"></script>
+<script src="libs/bootstrap-dialog.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(function(){

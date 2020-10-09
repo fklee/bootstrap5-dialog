@@ -7,7 +7,8 @@
   },
   "main": "dist/js/bootstrap-dialog.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\"",
+    "example": ""
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,12 @@
     "gulp-streamify": "0.0.5",
     "gulp-uglify": ">=0.3.0",
     "gulp-sass": "^4.1.0",
-    "vinyl-source-stream": "^0.1.1"
+    "vinyl-source-stream": "^0.1.1",
+    "gulp-watch": "^5.0.1",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "jquery": "^3.4.0",
+    "popper.js": "^1.16.1"
   }
 }
