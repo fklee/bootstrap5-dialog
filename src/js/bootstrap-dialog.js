@@ -1191,7 +1191,7 @@
             this.getModalBody().append(this.createBodyContent());
             this.getModal().data('bs.modal', new BootstrapDialogModal(this.getModalForBootstrapDialogModal(), { //FIXME for BootstrapV4
                 backdrop: (this.isClosable() && this.canCloseByBackdrop()) ? true : 'static',
-                keyboard: this.options.closeByKeyboard,
+                keyboard: false,
                 show: false
             }));
             this.makeModalDraggable();
