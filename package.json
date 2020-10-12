@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fklee/bootstrap5-dialog"
+    "url": "git+https://github.com/fklee/bootstrap5-dialog.git"
   },
   "keywords": [
     "bootstrap",
