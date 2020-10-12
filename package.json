@@ -1,6 +1,6 @@
 {
   "name": "bootstrap5-dialog",
-  "version": "5.0.0",
+  "version": "4.3.6",
   "description": "Make use of Bootstrap Modal more monkey-friendly.",
   "directories": {
     "example": "examples"
