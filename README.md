@@ -1,12 +1,18 @@
 bootstrap5-dialog
 ================
 
+## Thanks to 
+bootstrap 3 : https://github.com/nakupanda/bootstrap3-dialog
+bootstrap 4 : https://github.com/GedMarc/bootstrap4-dialog
 
+For all idea and updates
 
 ## Fully compatible with Bootstrap 5
 ## Allow set all styles for colors and modal sizes (included new full size)
 
 Make use of Bootstrap Modal more monkey-friendly.
+
+See examples/index.html for functionalities.
 
 ================
 
@@ -25,13 +31,6 @@ It's recommended to provide online examples when asking questions or reporting b
 
 ```
 ```
-================
-
-## Install using Bower
-```
-bower install bootstrap4-dialog#https://github.com/GedMarc/bootstrap4-dialog.git
-```
-
 ================
 
 ## Install using npm
