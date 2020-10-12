@@ -51,7 +51,7 @@ gulp.task("js", function (cb) {
 });
 
 gulp.task("clean", function (cb) {
-    return gulp.src(["dist/","src/css/"], { read: false, allowEmpty: true })
+    return gulp.src(["dist/","src/css/","examples/libs/"], { read: false, allowEmpty: true })
         .pipe(clean())
         .pipe(notify({
                 message: "Clean task completed."
@@ -63,10 +63,10 @@ gulp.task("copy", function(cb) {
     return gulp.src([
         'dist/css/bootstrap-dialog.css',
         'dist/css/bootstrap-dialog.min.css',
-        'dist/css/bootstrap-dialog.css.map',
+
         'dist/js/bootstrap-dialog.js',
         'dist/js/bootstrap-dialog.min.js',
-        'dist/js/bootstrap-dialog.js.map',
+
         'node_modules/jquery/dist/jquery.min.js',
         'node_modules/popper.js/dist/umd/popper.min.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
@@ -82,4 +82,18 @@ gulp.task("watch", function (){
         gulp.series("sass-map", "js", "minify-css", "copy"));
 })
 
+gulp.task("copy-dist", function (){
+    return gulp.src([
+        'dist/css/bootstrap-dialog.min.css',
+        'dist/js/bootstrap-dialog.min.js',
+
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/popper.js/dist/umd/popper.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    ])
+        .pipe(gulp.dest('examples/libs/'));
+});
+
 gulp.task("default", gulp.series("clean", "sass-map", "js", "minify-css", "copy"));
+gulp.task("dist", gulp.series("clean", "sass-map", "js", "minify-css", "copy-dist"));

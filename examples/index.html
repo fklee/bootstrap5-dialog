@@ -2,15 +2,10 @@
 <html>
 <head>
   <link href="libs/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="libs/bootstrap-dialog.css" rel="stylesheet" type="text/css">
+  <link href="libs/bootstrap-dialog.min.css" rel="stylesheet" type="text/css">
 
 <meta charset="utf-8" />
 <title>BootstrapDialog examples</title>
-<style>
-    .login-dialog .modal-dialog {
-        width: 300px;
-    }
-</style>
 </head>
 <body style="padding-bottom: 100px;">
 <div class="container">
@@ -20,9 +15,26 @@
     <h3>BUTTON-DEFAULT is not longer a bootstrap type, this type defaults to button-secondary</h3>
     <br/>
     <p>
-        Monkeys love the <a href="http://getbootstrap.com/javascript/#modals" target="_blank">Modal Dialog from Bootstrap</a>, but they're getting angry because they have to write this stuff:
+        Monkeys love the <a href="https://v5.getbootstrap.com/docs/5.0/components/modal/" target="_blank">Modal Dialog from Bootstrap</a>, but they're getting angry because they have to write this stuff:
     </p>
-    <pre class="prettyprint">&lt;div class="modal fade"&gt;<br />  &lt;div class="modal-dialog"&gt;<br />    &lt;div class="modal-content"&gt;<br />      &lt;div class="modal-header"&gt;<br />        &lt;button type="button" class="close" data-dismiss="modal" aria-hidden="true"&gt;&times;&lt;/button&gt;<br />        &lt;h4 class="modal-title"&gt;Modal title&lt;/h4&gt;<br />      &lt;/div&gt;<br />      &lt;div class="modal-body"&gt;<br />        &lt;p&gt;One fine body&hellip;&lt;/p&gt;<br />      &lt;/div&gt;<br />      &lt;div class="modal-footer"&gt;<br />        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;<br />        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;<br />      &lt;/div&gt;<br />    &lt;/div&gt;&lt;!-- /.modal-content --&gt;<br />  &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;<br />&lt;/div&gt;&lt;!-- /.modal --&gt;
+    <pre class="prettyprint">
+&#x3C;div class=&#x22;modal&#x22; tabindex=&#x22;-1&#x22;&#x3E;
+  &#x3C;div class=&#x22;modal-dialog&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+      &#x3C;div class=&#x22;modal-header&#x22;&#x3E;
+        &#x3C;h5 class=&#x22;modal-title&#x22;&#x3E;Modal title&#x3C;/h5&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn-close&#x22; data-dismiss=&#x22;modal&#x22; aria-label=&#x22;Close&#x22;&#x3E;&#x3C;/button&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modal-body&#x22;&#x3E;
+        &#x3C;p&#x3E;Modal body text goes here.&#x3C;/p&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div class=&#x22;modal-footer&#x22;&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-secondary&#x22; data-dismiss=&#x22;modal&#x22;&#x3E;Close&#x3C;/button&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-primary&#x22;&#x3E;Save changes&#x3C;/button&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
     </pre>
     <p>
         What they want is more like this:
@@ -139,6 +151,38 @@
         -->
     </div>
 
+    <h3>Scrolling long content</h3>
+    <p>
+        When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below to see what we mean.
+    </p>
+    <div class="source-code runnable">
+        <!--
+        BootstrapDialog.show({
+            message: function(dialog) {
+                var $message = $('<div></div>');
+                var pageToLoad = dialog.getData('pageToLoad');
+                $message.load(pageToLoad);
+
+                return $message;
+            },
+            data: {
+                'pageToLoad': 'long-text-remote.html'
+            },
+            scrollable: true,
+            buttons: [{
+                label: 'Change scrollable',
+                action: function(dialogItself){
+                    dialogItself.setScrollable( !dialogItself.getScrollable());
+                }
+            }, {
+                label: 'Close',
+                action: function(dialogItself){
+                    dialogItself.close();
+                }
+            }]
+        });
+        -->
+    </div>
     <h3>Buttons</h3>
     <div class="source-code runnable">
         <!--
@@ -616,7 +660,7 @@
         BootstrapDialog.show({
             message: 'I send ajax request!',
             buttons: [{
-                icon: 'glyphicon glyphicon-send',
+                icon: 'icon icon-clock',
                 label: 'Send ajax request',
                 cssClass: 'btn-primary',
                 autospin: true,
@@ -1186,7 +1230,7 @@ BootstrapDialog.show({
 <script src="libs/jquery.min.js" type="text/javascript"></script>
 <script src="libs/popper.min.js" type="text/javascript"></script>
 <script src="libs/bootstrap.min.js" type="text/javascript"></script>
-<script src="libs/bootstrap-dialog.js" type="text/javascript"></script>
+<script src="libs/bootstrap-dialog.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(function(){

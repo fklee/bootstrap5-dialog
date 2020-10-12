@@ -4,8 +4,7 @@ bootstrap5-dialog
 
 
 ## Fully compatible with Bootstrap 5
-## Includes size-extrawide full width display
-## Includes all colour themes from Bootstrap 5
+## Allow set all styles for colors and modal sizes (included new full size)
 
 Make use of Bootstrap Modal more monkey-friendly.
 
@@ -14,8 +13,6 @@ Make use of Bootstrap Modal more monkey-friendly.
 ## Ask a question
 
 It's recommended to provide online examples when asking questions or reporting bugs.
-Fork this all-ready jsfiddle and start writing your example:
-<a href="http://jsfiddle.net/qu6r3shn/">http://jsfiddle.net/qu6r3shn/</a>
 
 ================
 
@@ -40,7 +37,7 @@ bower install bootstrap4-dialog#https://github.com/GedMarc/bootstrap4-dialog.git
 ## Install using npm
 
 ```
-npm install --save bootstrap4-dialog
+npm install --save bootstrap5-dialog
 ```
 
 ================

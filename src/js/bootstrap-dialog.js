@@ -40,14 +40,9 @@
      * ================================================ */
     var Modal = $.fn.modal.Constructor;
     var BootstrapDialogModal = function (element, options) {
-        if (/4\.1\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
-            return new Modal(element, options);
-        } else if (/5\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
-            return new Modal(element, options);
-        } else {
-            Modal.call(this, element, options);
-        }
+        return new Modal(element, options);
     };
+
     BootstrapDialogModal.getModalVersion = function () {
         var version = null;
         if (typeof $.fn.modal.Constructor.VERSION === 'undefined') {
@@ -58,7 +53,7 @@
             version = 'v3.3';  // v3.3.1, v3.3.2
         } else if (/4\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV4
             version = 'v4.1';
-        } else if (/5\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //FIXME for BootstrapV5
+        } else if (/5\.\d\.\d+/.test($.fn.modal.Constructor.VERSION)) { //todo, OK for BootstrapV5 have to check to remove other versions tests
             version = 'v4.1';
         } else {
             version = 'v3.3.4';
@@ -225,16 +220,24 @@
     BootstrapDialog.DEFAULT_TEXTS['OK'] = 'OK';
     BootstrapDialog.DEFAULT_TEXTS['CANCEL'] = 'Cancel';
     BootstrapDialog.DEFAULT_TEXTS['CONFIRM'] = 'Confirmation';
+
     BootstrapDialog.SIZE_NORMAL = '';
     BootstrapDialog.SIZE_SMALL = 'modal-sm';
-    BootstrapDialog.SIZE_WIDE = 'modal-lg';    // size-wide is equal to modal-lg
-    BootstrapDialog.SIZE_EXTRAWIDE = 'modal-lg';    // size-wide is equal to modal-lg
+    BootstrapDialog.SIZE_WIDE = 'modal-lg';
+    BootstrapDialog.SIZE_EXTRAWIDE = 'modal-lg';
     BootstrapDialog.SIZE_LARGE = 'modal-xl';
+    BootstrapDialog.MODAL = 'modal-fullscreen';
+    BootstrapDialog.MODAL_SM = 'modal-fullscreen-sm-down';
+    BootstrapDialog.MODAL_MD = 'modal-fullscreen-md-down';
+    BootstrapDialog.MODAL_LG = 'modal-fullscreen-lg-down';
+    BootstrapDialog.MODAL_XL = 'modal-fullscreen-xl-down';
+
     BootstrapDialog.BUTTON_SIZES = {};
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_NORMAL] = '';
-    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_SMALL] = 'btn-small';
+    BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_SMALL] = 'btn-sm';
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_WIDE] = 'btn-block';
     BootstrapDialog.BUTTON_SIZES[BootstrapDialog.SIZE_LARGE] = 'btn-lg';
+
     BootstrapDialog.ICON_SPINNER = 'glyphicon glyphicon-asterisk';
     BootstrapDialog.BUTTONS_ORDER_CANCEL_OK = 'btns-order-cancel-ok';
     BootstrapDialog.BUTTONS_ORDER_OK_CANCEL = 'btns-order-ok-cancel';
@@ -261,7 +264,8 @@
         animate: true,
         description: '',
         tabindex: -1,
-        btnsOrder: BootstrapDialog.BUTTONS_ORDER_CANCEL_OK
+        btnsOrder: BootstrapDialog.BUTTONS_ORDER_CANCEL_OK,
+        scrollable: false,
     };
 
     /**
@@ -575,12 +579,26 @@
 
             return this;
         },
+        getScrollable: function() {
+            return this.options.scrollable ;
+        },
+        setScrollable: function(value) {
+            this.options.scrollable = value ;
+            this.updateScrollableContent();
+        },
+        updateScrollableContent: function(){
+            if (this.options.scrollable) {
+                this.getModalDialog().addClass('modal-dialog-scrollable');
+            } else {
+                this.getModalDialog().removeClass('modal-dialog-scrollable');
+            }
+        },
         updateSize: function () {
             if (this.isRealized()) {
                 var dialog = this;
 
                 // Dialog size
-                this.getModal().removeClass(BootstrapDialog.SIZE_NORMAL)
+                this.getModalDialog().removeClass(BootstrapDialog.SIZE_NORMAL)
                     .removeClass(BootstrapDialog.SIZE_SMALL)
                     .removeClass(BootstrapDialog.SIZE_WIDE)
                     .removeClass(BootstrapDialog.SIZE_EXTRAWIDE)
@@ -606,6 +624,7 @@
                 }
                 */
                 // Button size
+                /*
                 $.each(this.options.buttons, function (index, button) {
                     var $button = dialog.getButton(button.id);
                     var buttonSizes = ['btn-lg', 'btn-sm', 'btn-xs'];
@@ -623,6 +642,8 @@
                         $button.addClass(dialog.getButtonSize());
                     }
                 });
+                 */
+                //todo add button size option
             }
 
             return this;
@@ -941,7 +962,7 @@
                 $button.toggleEnable(button.enabled);
             }
 
-            $button.addClass("bootstrap4-dialog-button");
+            $button.addClass("bootstrap5-dialog-button");
 
             return $button;
         },
@@ -1216,6 +1237,7 @@
             this.updateAnimate();
             this.updateSize();
             this.updateTabindex();
+            this.updateScrollableContent();
 
             return this;
         },

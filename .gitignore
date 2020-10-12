@@ -4,3 +4,7 @@ bower_components
 /vendor/
 /.idea/
 /bootstrap4-dialog.iml
+/examples/libs/bootstrap-dialog.css
+/examples/libs/bootstrap-dialog.js
+/dist/css/bootstrap-dialog.css.map
+/dist/js/bootstrap-dialog.js.map

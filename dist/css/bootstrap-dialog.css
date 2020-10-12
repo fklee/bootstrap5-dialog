@@ -1,4 +1,11 @@
-.icon {
+.bootstrap-dialog .icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear; }
+
+.bootstrap-dialog .icon {
   display: inline-block;
   vertical-align: middle;
   background-repeat: no-repeat;
@@ -9,173 +16,37 @@
   margin-left: 0.2em;
   margin-right: 0.2em; }
 
-.icon-clock {
+.bootstrap-dialog .icon-clock {
   background-image: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-alarm' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z'/%3E%3C/svg%3E"); }
-
-/*
-.bootstrap-dialog {
-  .bootstrap-dialog-header {
-    display: contents;
-  }
-
-}
-*/
-/*
-.bootstrap-dialog .modal-header {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.bootstrap-dialog .bootstrap-dialog-title {
-  color: #fff;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.bootstrap-dialog .bootstrap-dialog-message {
-  font-size: 14px;
-}
-
-.bootstrap-dialog .bootstrap-dialog-button-icon {
-  margin-right: 3px;
-}
-
-.bootstrap-dialog .bootstrap-dialog-close-button {
-  font-size: 20px;
-  float: right;
-  opacity: 0.9;
-  filter: alpha(opacity=90);
-}
-
-.bootstrap-dialog .bootstrap-dialog-close-button:hover {
-  cursor: pointer;
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-
-@media (min-width: 1172px) {
-  .bootstrap-dialog .modal-xl {
-    max-width: 95%;
-  }
-}
-
-.bootstrap-dialog .modal-lg .bootstrap4-dialog-button:first-child {
-  margin-top: 8px;
-}
-
-.bootstrap-dialog.type-default .modal-header {
-  background-color: #fff;
-}
-
-.bootstrap-dialog.type-default .bootstrap-dialog-title {
-  color: #333;
-}
-
-.bootstrap-dialog.type-info .modal-header {
-  background-color: #17a2b8;
-}
-
-.bootstrap-dialog.type-primary .modal-header {
-  background-color: #007bff;
-}
-
-.bootstrap-dialog.type-secondary .modal-header {
-  background-color: #6c757d;
-}
-
-.bootstrap-dialog.type-success .modal-header {
-  background-color: #28a745;
-}
-
-.bootstrap-dialog.type-warning .modal-header {
-  background-color: #ffc107;
-}
-
-.bootstrap-dialog.type-danger .modal-header {
-  background-color: #dc3545;
-}
-
-.bootstrap-dialog.type-light .modal-header {
-  background-color: #f8f9fa;
-}
-
-.bootstrap-dialog.type-dark .modal-header {
-  background-color: #343a40;
-}
-
-.bootstrap-dialog.size-large .bootstrap-dialog-title {
-  font-size: 24px;
-}
-
-.bootstrap-dialog.size-large .bootstrap-dialog-close-button {
-  font-size: 30px;
-}
-
-.bootstrap-dialog.size-large .bootstrap-dialog-message {
-  font-size: 18px;
-}
-
-.bootstrap-dialog .icon-spin {
-  display: inline-block;
-  -moz-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  -webkit-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear;
-}
-
-.bootstrap-dialog-footer-buttons{
-  display: flex;
-}
 
 @-moz-keyframes spin {
   0% {
-    -moz-transform: rotate(0deg);
-  }
+    -moz-transform: rotate(0deg); }
   100% {
-    -moz-transform: rotate(359deg);
-  }
-}
+    -moz-transform: rotate(359deg); } }
 
 @-webkit-keyframes spin {
   0% {
-    -webkit-transform: rotate(0deg);
-  }
+    -webkit-transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
-  }
-}
+    -webkit-transform: rotate(359deg); } }
 
 @-o-keyframes spin {
   0% {
-    -o-transform: rotate(0deg);
-  }
+    -o-transform: rotate(0deg); }
   100% {
-    -o-transform: rotate(359deg);
-  }
-}
+    -o-transform: rotate(359deg); } }
 
 @-ms-keyframes spin {
   0% {
-    -ms-transform: rotate(0deg);
-  }
+    -ms-transform: rotate(0deg); }
   100% {
-    -ms-transform: rotate(359deg);
-  }
-}
+    -ms-transform: rotate(359deg); } }
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   100% {
-    transform: rotate(359deg);
-  }
-}
-
-.bootstrap-dialog-header {
-  display: contents;
-}
-*/
-/*# sourceMappingURL=bootstrap-dialog.css.map */
+    transform: rotate(359deg); } }
 
 /*# sourceMappingURL=bootstrap-dialog.css.map */
