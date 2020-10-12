@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/fklee/bootstrap5-dialog",
   "devDependencies": {
-    "bootstrap": ">=5.0.0-alpha.0",
     "eslint": ">=0.6.2",
     "gulp": ">=3.8.1",
     "gulp-clean": ">=0.3.0",
@@ -43,6 +42,7 @@
     "gulp-sourcemaps": "^2.6.5"
   },
   "dependencies": {
+    "bootstrap": ">=5.0.0-alpha.0",
     "jquery": "^3.4.0",
     "popper.js": "^1.16.1"
   }
