@@ -7,6 +7,16 @@
   /** End of icon animation **/
 }
 
+$brand-primary: #007bff;
+$brand-secondary: #6c757d;
+$brand-success: #28a745;
+$brand-info: #17a2b8;
+$brand-warning: #ffc107;
+$brand-danger: #dc3545;
+$brand-light: #f8f9fa;
+$brand-dark: #343a40;
+
+
 .bootstrap-dialog .modal-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -58,31 +68,31 @@
 }
 
 .bootstrap-dialog.type-info .modal-header {
-  background-color: #17a2b8;
+  background-color: $brand-info;
 }
 
 .bootstrap-dialog.type-primary .modal-header {
-  background-color: #007bff;
+  background-color: $brand-primary;
 }
 
 .bootstrap-dialog.type-secondary .modal-header {
-  background-color: #6c757d;
+  background-color: $brand-secondary;
 }
 
 .bootstrap-dialog.type-success .modal-header {
-  background-color: #28a745;
+  background-color: $brand-success;
 }
 
 .bootstrap-dialog.type-warning .modal-header {
-  background-color: #ffc107;
+  background-color: $brand-warning;
 }
 
 .bootstrap-dialog.type-danger .modal-header {
-  background-color: #dc3545;
+  background-color: $brand-danger;
 }
 
 .bootstrap-dialog.type-light .modal-header {
-  background-color: #f8f9fa;
+  background-color: $brand-light;
 }
 
 .bootstrap-dialog.type-dark .modal-header {

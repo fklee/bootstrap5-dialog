@@ -11,9 +11,9 @@
  *
  * Licensed under The MIT License.
  * ================================================ */
-(function (root, factory) {
-
-    "use strict";
+(function (root, factory) { 
+ 
+    "use strict"; 
 
     // CommonJS module is defined
     if (typeof module !== 'undefined' && module.exports) {
@@ -1182,7 +1182,7 @@
             return this;
         },
         realize: function () {
-            this.initModalStuff();
+            this.initModalStuff(); 
             this.getModal().addClass(BootstrapDialog.NAMESPACE)
                 .addClass(this.getCssClass());
             this.updateSize();
