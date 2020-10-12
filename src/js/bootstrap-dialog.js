@@ -1161,7 +1161,7 @@
                         left: event.clientX - dialogOffset.left
                     };
                 });
-                this.getModal().on('mouseup mouseleave', { dialog: this }, function (event) {
+                this.getModal().on('mouseup', { dialog: this }, function (event) {
                     event.data.dialog.draggableData.isMouseDown = false;
                 });
                 $('body').on('mousemove', { dialog: this }, function (event) {
@@ -1169,10 +1169,13 @@
                     if (!dialog.draggableData.isMouseDown) {
                         return;
                     }
+                    event.preventDefault();
                     dialog.getModalDialog().offset({
                         top: event.clientY - dialog.draggableData.mouseOffset.top,
                         left: event.clientX - dialog.draggableData.mouseOffset.left
                     });
+                }).on('mouseleave', { dialog: this }, function (event) {
+                    event.data.dialog.draggableData.isMouseDown = false;
                 });
             }
 
