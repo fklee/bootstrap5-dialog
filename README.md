@@ -1,3 +1,7 @@
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![GitHub tag](https://img.shields.io/github/tag/fklee/bootstrap5-dialog.svg)](https://GitHub.com/fklee/bootstrap5-dialog/tags/)
+[![npm](https://img.shields.io/npm/v/bootstrap5-dialog.svg?maxAge=2592000)](https://www.npmjs.com/package/bootstrap5-dialog)
+
 bootstrap5-dialog
 ================
 
