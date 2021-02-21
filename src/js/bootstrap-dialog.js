@@ -11,7 +11,7 @@
  *
  * Licensed under The MIT License.
  * ================================================ */
-(function (root, factory) { 
+(function (root, factory) {
  
     "use strict"; 
 
