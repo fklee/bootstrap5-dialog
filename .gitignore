@@ -6,5 +6,6 @@ bower_components
 /bootstrap4-dialog.iml
 /examples/libs/bootstrap-dialog.css
 /examples/libs/bootstrap-dialog.js
+/examples/index_dev.html
 /dist/css/bootstrap-dialog.css.map
 /dist/js/bootstrap-dialog.js.map

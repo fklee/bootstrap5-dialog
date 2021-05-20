@@ -10,6 +10,6 @@
     ],
     "require": {
 	"components/jquery": "*",
-	"twbs/bootstrap": "5.*@alpha"
+	"twbs/bootstrap": "^5.0"
     }
 }

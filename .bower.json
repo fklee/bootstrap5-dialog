@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap4-dialog",
+  "name": "bootstrap5-dialog",
   "description": "Make use of Bootstrap Modal more monkey-friendly. http://nakupanda.github.io/bootstrap3-dialog/ updated to bootstrap4",
-  "version": "4.3.4",
+  "version": "5.0.2",
   "keywords": [
     "css",
     "js",
@@ -12,9 +12,8 @@
     "framework",
     "web"
   ],
-  "homepage": "https://github.com/GedMarc/bootstrap4-dialog",
+  "homepage": "https://github.com/fklee/bootstrap5-dialog",
   "main": [
-    "dist/less/bootstrap-dialog.less",
     "dist/css/bootstrap-dialog.min.css",
     "dist/js/bootstrap-dialog.min.js"
   ],

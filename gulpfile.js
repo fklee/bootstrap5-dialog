@@ -74,12 +74,25 @@ gulp.task("copy", function(cb) {
         'node_modules/bootstrap/dist/css/bootstrap.min.css',
         ])
         .pipe(gulp.dest('examples/libs/'));
+});
 
+gulp.task("copy-dev", function(cb) {
+
+    return gulp.src([
+        'src/css/bootstrap-dialog.css',
+        'src/js/bootstrap-dialog.js',
+
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/popper.js/dist/umd/popper.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/bootstrap/dist/css/bootstrap.css',
+    ])
+        .pipe(gulp.dest('examples/libs/'));
 });
 
 gulp.task("watch", function (){
     watch(['src/js/bootstrap-dialog.js', 'src/scss/bootstrap-dialog.scss'],
-        gulp.series("sass-map", "js", "minify-css", "copy"));
+        gulp.series("sass-map", "js", "minify-css", "copy-dev"));
 })
 
 gulp.task("copy-dist", function (){

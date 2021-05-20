@@ -25,25 +25,25 @@
   },
   "homepage": "https://github.com/fklee/bootstrap5-dialog",
   "devDependencies": {
-    "eslint": ">=0.6.2",
+    "eslint": "^7.26.0",
     "gulp": ">=3.8.1",
     "gulp-clean": ">=0.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": ">=0.1.7",
     "gulp-less": ">=1.2.3",
     "gulp-minify-css": "^0.3.4",
-    "gulp-notify": ">=1.3.1",
+    "gulp-notify": "^4.0.0",
     "gulp-rename": ">=1.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": ">=0.3.0",
-    "gulp-sass": "^4.1.0",
-    "vinyl-source-stream": "^0.1.1",
     "gulp-watch": "^5.0.1",
-    "gulp-sourcemaps": "^2.6.5"
+    "vinyl-source-stream": "^0.1.1"
   },
   "dependencies": {
-    "bootstrap": ">=5.0.0-alpha.0",
-    "jquery": "^3.4.0",
+    "bootstrap": "^5.0.0",
+    "jquery": "^3.6.0",
     "popper.js": "^1.16.1"
   }
 }

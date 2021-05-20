@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14a055718cd7f0780cc13bd04df40922",
+    "content-hash": "d86cbaf23aef43ee699e1ae3e54963b4",
     "packages": [
         {
             "name": "components/jquery",
@@ -50,16 +50,16 @@
         },
         {
             "name": "twbs/bootstrap",
-            "version": "v5.0.0-alpha2",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "b083c9639fd9012e5cba57d6c4088d43b3c3e57d"
+                "reference": "58b1be927f43c779377e478df2d119f2ddf956ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/b083c9639fd9012e5cba57d6c4088d43b3c3e57d",
-                "reference": "b083c9639fd9012e5cba57d6c4088d43b3c3e57d",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/58b1be927f43c779377e478df2d119f2ddf956ca",
+                "reference": "58b1be927f43c779377e478df2d119f2ddf956ca",
                 "shasum": ""
             },
             "replace": {
@@ -92,15 +92,13 @@
                 "sass",
                 "web"
             ],
-            "time": "2020-09-29T15:33:00+00:00"
+            "time": "2021-05-13T16:22:20+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "twbs/bootstrap": 15
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
