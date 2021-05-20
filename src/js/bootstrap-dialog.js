@@ -1183,6 +1183,7 @@
         makeModalDraggable: function () {
             if (this.options.draggable) {
                 this.getModalHeader().addClass(this.getNamespace('draggable')).on('mousedown', { dialog: this }, function (event) {
+                    event.preventDefault();
                     var dialog = event.data.dialog;
                     dialog.draggableData.isMouseDown = true;
                     var dialogOffset = dialog.getModalDialog().offset();
@@ -1191,7 +1192,7 @@
                         left: event.clientX - dialogOffset.left
                     };
                 });
-                this.getModal().on('mouseup mouseleave', { dialog: this }, function (event) {
+                this.getModal().on('mouseup', { dialog: this }, function (event) {
                     event.data.dialog.draggableData.isMouseDown = false;
                 });
                 $('body').on('mousemove', { dialog: this }, function (event) {
@@ -1203,6 +1204,8 @@
                         top: event.clientY - dialog.draggableData.mouseOffset.top,
                         left: event.clientX - dialog.draggableData.mouseOffset.left
                     });
+                }).on('mouseleave', { dialog: this }, function (event) {
+                    event.data.dialog.draggableData.isMouseDown = false;
                 });
             }
 
@@ -1223,7 +1226,7 @@
             this.getModalBody().append(this.createBodyContent());
             this.getModal().data('bs.modal', new BootstrapDialogModal(this.getModalForBootstrapDialogModal(), { //FIXME for BootstrapV4
                 backdrop: (this.isClosable() && this.canCloseByBackdrop()) ? true : 'static',
-                keyboard: this.options.closeByKeyboard,
+                keyboard: false,
                 show: false
             }));
             this.makeModalDraggable();
